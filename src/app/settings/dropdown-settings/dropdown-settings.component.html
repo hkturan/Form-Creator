@@ -1,0 +1,108 @@
+<div style="overflow-y: scroll; max-height: 500px; padding: 10px;">
+  <div class="cssHeader">Element Settings</div>
+  <p-panel header="Element" [toggleable]="true" expandIcon="pi pi-chevron-down" collapseIcon="pi pi-chevron-up">
+    <div style="font-size: 14px; padding: 2px 2px 13px 2px; text-align: left; font-weight: 500;">
+      Options
+    </div>
+    <div *ngIf="dropdown.options && dropdown.options.length > 0; else elseBlock" class="flex align-items-center">
+      <p-chip (click)="onClickSelectOption(option)" (onRemove)="onClickRemoveOption(option)" *ngFor="let option of dropdown.options" label="{{option.text}}" styleClass="{{'p-mr-2' + (dropdown.selectedOption && dropdown.selectedOption.value === option.value ? ' selected-chip' : '')}}"
+              [removable]="true"></p-chip>
+    </div>
+    <ng-template #elseBlock>
+      <div
+        style="font-size: 13px; padding: 10px; border-radius: 10px; border: 1px solid #e8e8e8; background-color: #f5f5f5; text-align: center; font-weight: 500;">
+        Dropdown Options : Empty (Please Add Option)
+      </div>
+    </ng-template>
+    <div class="cssDisplayFlex p-mt-3">
+      <input [(ngModel)]="dropdownOption.value" [style]="{'width': '100%'}" type="text" class="p-inputtext p-component p-element p-inputtext-sm"
+             placeholder="Option Value" pInputText/>
+      <input [(ngModel)]="dropdownOption.text" [style]="{'width': '100%'}" type="text" class="p-ml-3 p-inputtext p-component p-element p-inputtext-sm"
+             placeholder="Option Text" pInputText/>
+      <p-button (onClick)="onClickAddOption()" [style]="{'width': '90px'}" label="Add" icon="pi pi-plus"
+                styleClass="p-ml-3 p-button-sm p-button-success"></p-button>
+    </div>
+    <div *ngIf="dropdown.options && dropdown.options.length > 0"
+      style="font-size: 12px; padding: 4px; color: #007bff; text-align: left; font-weight: 500;">
+      Note : If you want the option to be selected, you must click on the option
+    </div>
+    <div class="p-mt-3">
+      <!-- Id -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Id</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="text" pInputText [(ngModel)]="dropdown.name" placeholder="Enter Element Id">
+      </div>
+      <!-- Id -->
+
+      <!-- Name -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Name</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="text" pInputText [(ngModel)]="dropdown.id" placeholder="Enter Element Name">
+      </div>
+      <!-- Name -->
+
+      <!-- Padding -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Padding</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput cssPaddingInput"
+               type="number" pInputText [(ngModel)]="dropdown.padding.top" pTooltip="Top" tooltipPosition="top"
+               placeholder="Top">
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput cssPaddingInput p-ml-2"
+               type="number" pInputText [(ngModel)]="dropdown.padding.right" pTooltip="Right" tooltipPosition="top"
+               placeholder="Top">
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput cssPaddingInput p-ml-2"
+               type="number" pInputText [(ngModel)]="dropdown.padding.bottom" pTooltip="Bottom" tooltipPosition="top"
+               placeholder="Top">
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput cssPaddingInput p-ml-2"
+               type="number" pInputText [(ngModel)]="dropdown.padding.left" pTooltip="Left" tooltipPosition="top"
+               placeholder="Top">
+      </div>
+      <!-- Padding -->
+    </div>
+    <div class="cssDisplayFlex p-mt-1">
+      <div class="cssLabel">
+        <label>Label Position</label>
+      </div>
+      <p-dropdown [options]="listEnumPosition" [(ngModel)]="dropdown.labelPosition" optionLabel="text"
+                  optionDisabled="isAvailableForTextbox"></p-dropdown>
+    </div>
+  </p-panel>
+
+  <div class="cssDisplayFlex p-mt-3">
+    <div class="cssWidth100Percent">
+      <div class="cssHeader">Label Settings</div>
+      <app-element-settings [element]="dropdown.labelElement"></app-element-settings>
+    </div>
+    <div style="width: 20px;">
+      <!--SPACING-->
+    </div>
+    <div class="cssWidth100Percent">
+      <div class="cssHeader">Input Settings</div>
+      <app-element-settings [element]="dropdown.inputElement"></app-element-settings>
+    </div>
+  </div>
+</div>
+<div style="text-align: center; margin-top: 15px; border-top: 1px solid #ebebeb; padding-top: 15px;">
+  <div class="field-checkbox">
+    <p-checkbox [(ngModel)]="useLastSettings" [binary]="true" inputId="binary"></p-checkbox>
+    <label class="p-ml-1" style="font-size: 13px; font-weight: 600;" for="binary">Use settings for next uses</label>
+  </div>
+</div>
+<div style="text-align: center; margin-top: 8px;">
+  <button pButton pRipple type="button" (click)="onClickConfirm()"
+          label="Confirm"
+          class="cssConfirmButton p-element p-ripple p-button-rounded p-button-primary p-button p-component">
+  </button>
+  <button pButton pRipple type="button" (click)="onClickCancel()"
+          label="Cancel"
+          class="cssConfirmButton p-element p-ripple p-button-outlined p-button-rounded p-button-primary p-button p-component p-ml-2">
+  </button>
+</div>

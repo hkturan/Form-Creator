@@ -1,0 +1,121 @@
+<div style="overflow-y: scroll; max-height: 500px; padding: 10px;">
+  <div class="cssHeader">Element Settings</div>
+  <p-panel header="Element" [toggleable]="true" expandIcon="pi pi-chevron-down" collapseIcon="pi pi-chevron-up">
+    <div>
+      <!-- Id -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Id</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="text" pInputText [(ngModel)]="button.name" placeholder="Enter Element Id">
+      </div>
+      <!-- Id -->
+
+      <!-- Name -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Name</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="text" pInputText [(ngModel)]="button.id" placeholder="Enter Element Name">
+      </div>
+      <!-- Name -->
+
+      <!-- Padding -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Padding</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput cssPaddingInput"
+               type="number" pInputText [(ngModel)]="button.padding.top" pTooltip="Top" tooltipPosition="top" placeholder="Top">
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput cssPaddingInput p-ml-2"
+               type="number" pInputText [(ngModel)]="button.padding.right" pTooltip="Right" tooltipPosition="top" placeholder="Top">
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput cssPaddingInput p-ml-2"
+               type="number" pInputText [(ngModel)]="button.padding.bottom" pTooltip="Bottom" tooltipPosition="top" placeholder="Top">
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput cssPaddingInput p-ml-2"
+               type="number" pInputText [(ngModel)]="button.padding.left" pTooltip="Left" tooltipPosition="top" placeholder="Top">
+      </div>
+      <!-- Padding -->
+
+      <!-- Value -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Value</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="text" pInputText [(ngModel)]="button.value">
+      </div>
+      <!-- Value -->
+
+      <!-- Width -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Width</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="text" pInputText [(ngModel)]="button.width">
+      </div>
+      <!-- Width -->
+
+      <!-- Height -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Height</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="number" pInputText [(ngModel)]="button.height">
+      </div>
+      <!-- Height -->
+
+      <!-- Cursor -->
+      <div class="cssDisplayFlex p-mt-1">
+        <div class="cssLabel">
+          <label>Cursor</label>
+        </div>
+        <p-dropdown appendTo="body" [options]="listEnumCursor" [(ngModel)]="button.cursor" optionLabel="text"></p-dropdown>
+      </div>
+      <!-- Cursor -->
+
+      <!-- Text Align -->
+      <div class="cssDisplayFlex p-mt-1">
+        <div class="cssLabel">
+          <label>Text Align</label>
+        </div>
+        <p-dropdown appendTo="body" [options]="listEnumTextAlign" [(ngModel)]="button.textAlign" optionLabel="text"></p-dropdown>
+      </div>
+      <!-- Text Align -->
+
+      <!-- Background Color -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Back Color</label>
+        </div>
+        <p-colorPicker appendTo="body" [(ngModel)]="button.backgroundColor"></p-colorPicker>
+      </div>
+      <!-- Background Color -->
+    </div>
+  </p-panel>
+
+  <div class="cssDisplayFlex">
+    <app-font-settings [font]="button.font"></app-font-settings>
+    <div style="width: 15px;">
+      <!-- SPACING -->
+    </div>
+    <app-border-settings [border]="button.border"></app-border-settings>
+  </div>
+</div>
+<div style="text-align: center; margin-top: 15px; border-top: 1px solid #ebebeb; padding-top: 15px;">
+  <div class="field-checkbox">
+    <p-checkbox [(ngModel)]="useLastSettings" [binary]="true" inputId="binary"></p-checkbox>
+    <label class="p-ml-1" style="font-size: 13px; font-weight: 600;" for="binary">Use settings for next uses</label>
+  </div>
+</div>
+<div style="text-align: center; margin-top: 8px;">
+  <button pButton pRipple type="button" (click)="onClickConfirm()"
+          label="Confirm" class="cssConfirmButton p-element p-ripple p-button-rounded p-button-primary p-button p-component">
+  </button>
+  <button pButton pRipple type="button" (click)="onClickCancel()"
+          label="Cancel" class="cssConfirmButton p-element p-ripple p-button-outlined p-button-rounded p-button-primary p-button p-component p-ml-2">
+  </button>
+</div>

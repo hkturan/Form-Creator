@@ -1,0 +1,83 @@
+<div style="overflow-y: scroll; max-height: 500px; padding: 10px;">
+  <div class="cssHeader">Element Settings</div>
+  <p-panel header="Element" [toggleable]="true" expandIcon="pi pi-chevron-down" collapseIcon="pi pi-chevron-up">
+    <div>
+      <!-- Id -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Id</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="text" pInputText [(ngModel)]="checkbox.name" placeholder="Enter Element Id">
+      </div>
+      <!-- Id -->
+
+      <!-- Name -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Name</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="text" pInputText [(ngModel)]="checkbox.id" placeholder="Enter Element Name">
+      </div>
+      <!-- Name -->
+
+      <!-- Padding -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Padding</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput cssPaddingInput"
+               type="number" pInputText [(ngModel)]="checkbox.padding.top" pTooltip="Top" tooltipPosition="top" placeholder="Top">
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput cssPaddingInput p-ml-2"
+               type="number" pInputText [(ngModel)]="checkbox.padding.right" pTooltip="Right" tooltipPosition="top" placeholder="Top">
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput cssPaddingInput p-ml-2"
+               type="number" pInputText [(ngModel)]="checkbox.padding.bottom" pTooltip="Bottom" tooltipPosition="top" placeholder="Top">
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput cssPaddingInput p-ml-2"
+               type="number" pInputText [(ngModel)]="checkbox.padding.left" pTooltip="Left" tooltipPosition="top" placeholder="Top">
+      </div>
+      <!-- Padding -->
+
+      <!-- Zoom -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Zoom</label>
+        </div>
+        <input class="p-inputtext p-component p-EnumBorderStyle ng-pristine ng-valid ng-touched cssInput"
+               id="labelLineHeight"
+               type="number" pInputText [(ngModel)]="checkbox.zoom">
+      </div>
+      <!-- Zoom -->
+
+      <!-- Background Color -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Back Color</label>
+        </div>
+        <p-colorPicker appendTo="body" [(ngModel)]="checkbox.backgroundColor"></p-colorPicker>
+      </div>
+      <!-- Background Color -->
+    </div>
+  </p-panel>
+
+  <div class="cssDisplayFlex p-mt-3">
+    <div class="cssWidth100Percent">
+      <div class="cssHeader">Label Settings</div>
+      <app-element-settings [element]="checkbox.labelElement"></app-element-settings>
+    </div>
+  </div>
+</div>
+<div style="text-align: center; margin-top: 15px; border-top: 1px solid #ebebeb; padding-top: 15px;">
+  <div class="field-checkbox">
+    <p-checkbox [(ngModel)]="useLastSettings" [binary]="true" inputId="binary"></p-checkbox>
+    <label class="p-ml-1" style="font-size: 13px; font-weight: 600;" for="binary">Use settings for next uses</label>
+  </div>
+</div>
+<div style="text-align: center; margin-top: 8px;">
+  <button pButton pRipple type="button" (click)="onClickConfirm()"
+          label="Confirm" class="cssConfirmButton p-element p-ripple p-button-rounded p-button-primary p-button p-component">
+  </button>
+  <button pButton pRipple type="button" (click)="onClickCancel()"
+          label="Cancel" class="cssConfirmButton p-element p-ripple p-button-outlined p-button-rounded p-button-primary p-button p-component p-ml-2">
+  </button>
+</div>

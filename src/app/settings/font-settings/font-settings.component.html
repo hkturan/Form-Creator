@@ -1,0 +1,44 @@
+<div class="p-mt-2">
+  <p-panel header="Font" [toggleable]="true" expandIcon="pi pi-chevron-down" collapseIcon="pi pi-chevron-up">
+    <div class="cssMain">
+      <!-- Size -->
+      <div class="cssDisplayFlex">
+        <div class="cssLabel">
+          <label>Size</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="number" pInputText [(ngModel)]="font.size">
+      </div>
+      <!-- Size -->
+
+      <!-- Weight -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Weight</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="number" pInputText [(ngModel)]="font.weight">
+      </div>
+      <!-- Weight -->
+
+      <!-- Family -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Family</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="text" pInputText [(ngModel)]="font.family">
+      </div>
+      <!-- Family -->
+
+      <!-- Color -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Color</label>
+        </div>
+        <p-colorPicker appendTo="body" [(ngModel)]="font.color"></p-colorPicker>
+      </div>
+      <!-- Color -->
+    </div>
+  </p-panel>
+</div>

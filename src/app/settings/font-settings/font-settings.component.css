@@ -1,0 +1,31 @@
+:host ::ng-deep .p-panel-header {
+  font-size: 13px;
+  height: 40px;
+  padding-right: 8px !important;
+}
+
+:host ::ng-deep .pi {
+  font-size: 15px !important;
+}
+
+:host ::ng-deep .p-panel-content {
+  padding: 15px;
+}
+
+.cssInput {
+  width: calc(100% - 60px);
+  height: 33px;
+  font-size: 13px;
+}
+
+.cssLabel {
+  width: 60px;
+  line-height: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666666;
+}
+
+:host ::ng-deep .deneme {
+  width: 100% !important;
+}

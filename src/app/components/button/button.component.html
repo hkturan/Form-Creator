@@ -1,0 +1,29 @@
+<div #targetDiv class="cssComponentDiv" [style]="{
+'padding': button.padding.top + getPxStringForPadding(button.padding.top) + ' ' +
+           button.padding.right + getPxStringForPadding(button.padding.right) + ' ' +
+           button.padding.bottom + getPxStringForPadding(button.padding.bottom) + ' ' +
+           button.padding.left + getPxStringForPadding(button.padding.left) + ' ',
+'align-items': 'center',
+'text-align': button.textAlign.value
+}">
+  <button type="button" [style]="{
+      'height': button.height + 'px',
+      'width': button.width,
+      'cursor': button.cursor.value,
+      'background-color': button.backgroundColor,
+      'color': button.font.color,
+      'font-weight': button.font.weight,
+      'font-size': button.font.size + 'px',
+      'font-family': button.font.family,
+      'border-radius': button.border.radius + 'px',
+      'border-style': button.border.style.value,
+      'border-width': button.border.width + 'px',
+      'border-color': button.border.color
+  }">{{button.value}}
+  </button>
+</div>
+
+<p-contextMenu [target]="targetDiv" [model]="menuItems"></p-contextMenu>
+
+<p-confirmDialog rejectButtonStyleClass="p-button-outlined" key="{{'confirmDialogKeyDelete' + this.index.row + this.index.column + this.tableIndex}}" [style]="{width: '30vw'}">
+</p-confirmDialog>

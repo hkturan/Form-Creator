@@ -11,11 +11,13 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
-    "module": "es2020",
+    "module": "esnext",
     "lib": [
       "es2018",
-      "dom"
-    ]
+      "dom",
+      "es2017",
+      "DOM"
+    ],
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false

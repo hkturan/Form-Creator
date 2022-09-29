@@ -1,0 +1,39 @@
+.cssLabel {
+  width: var(--textBoxLabelWidth);
+  line-height: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666666;
+}
+
+.cssHeader {
+  height: 32px;
+  border: 1px solid #c1c1c1;
+  text-align: center;
+  line-height: 30px;
+  background: #efefef;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.cssInput {
+  width: calc(100% - var(--textBoxLabelWidth));;
+  height: 33px;
+  font-size: 13px;
+}
+
+:host ::ng-deep .p-panel-header {
+  font-size: 13px;
+  height: 40px;
+  padding-right: 8px !important;
+}
+
+:host ::ng-deep .pi {
+  font-size: 15px !important;
+}
+
+:host ::ng-deep .p-panel-content {
+  padding: 15px;
+}

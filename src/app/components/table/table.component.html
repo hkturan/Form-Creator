@@ -1,0 +1,72 @@
+<div id="hoverButton">
+  <div style="position: relative; width: 0; height: 0">
+    <div style="position: absolute; left: 13px; top: -12px">
+      <p-badge value="Table" styleClass="mr-2" class="p-element">
+        <span class="mr-2 p-badge p-component p-badge-warning"></span>
+      </p-badge>
+    </div>
+  </div>
+
+  <div style="position: relative; width: 0; height: 0">
+    <div style="position: absolute; left: 85px; top: -11px">
+      <button pTooltip="Delete" tooltipPosition="top" pbutton="" pRipple="" type="button" icon="pi pi-pi-times" (click)="onClickDelete()"
+              style="height: 24px; width: 24px;"
+              class="p-ml-2 p-element p-ripple p-button-rounded p-button p-button-danger p-component p-button-icon-only">
+        <span style="font-size: 12px;" class="p-button-icon pi pi-times" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+
+  <div style="position: relative; width: 0; height: 0">
+    <div style="position: absolute; left: 56px; top: -11px">
+      <button pTooltip="Settings" tooltipPosition="top" pbutton="" pRipple="" type="button" icon="pi pi-pi-times" (click)="openTableSettings()"
+              style="height: 24px; width: 24px;"
+              class="p-ml-2 p-element p-ripple p-button-rounded p-button p-button-help p-component p-button-icon-only">
+        <span style="font-size: 12px;" class="p-button-icon pi pi-cog" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<div class="divTable" id="{{table.id}}"
+     style="display: table; width: 100%; table-layout:fixed; border-radius: 5px;">
+  <ng-container *ngFor="let item1 of [].constructor(table.rowCount); let rowIndex = index">
+    <div class="divTable2"
+         style="display: table; width: 100%; table-layout:fixed; margin-top: 5px; min-height: 30px; border-radius: 10px;">
+      <ng-container *ngFor="let item2 of [].constructor(table.columnCount); let colIndex = index">
+        <div pDroppable="formElements" (onDrop)="drop($event, rowIndex, colIndex)"
+             (onDragEnter)="dragEnter($event)" (onDragLeave)="dragLeave($event)" class="divFormElement"
+             style="min-height: 30px; display: table-cell;">
+          <ng-container *ngFor="let components of listComponents" [ngSwitch]="components.value">
+            <ng-container *ngSwitchCase="enumFormElement.TEXTBOX">
+              <app-textbox *ngIf="rowIndex === components.index.row && colIndex === components.index.column" [tableIndex]="index"
+                           [textbox]="components.entity" [index]="components.index" (eventEmitterDeleteCompIndex)="eventEmitterDeleteComp($event)">
+              </app-textbox>
+            </ng-container>
+            <ng-container *ngSwitchCase="enumFormElement.DROPDOWN">
+              <app-dropdown *ngIf="rowIndex === components.index.row && colIndex === components.index.column" [tableIndex]="index"
+                           [dropdown]="components.entity" [index]="components.index" (eventEmitterDeleteCompIndex)="eventEmitterDeleteComp($event)">
+              </app-dropdown>
+            </ng-container>
+            <ng-container *ngSwitchCase="enumFormElement.CHECKBOX">
+              <app-checkbox *ngIf="rowIndex === components.index.row && colIndex === components.index.column" [tableIndex]="index"
+                            [checkbox]="components.entity" [index]="components.index" (eventEmitterDeleteCompIndex)="eventEmitterDeleteComp($event)">
+              </app-checkbox>
+            </ng-container>
+            <ng-container *ngSwitchCase="enumFormElement.BUTTON">
+              <app-button *ngIf="rowIndex === components.index.row && colIndex === components.index.column" [tableIndex]="index"
+                            [button]="components.entity" [index]="components.index" (eventEmitterDeleteCompIndex)="eventEmitterDeleteComp($event)">
+              </app-button>
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+            </ng-container>
+          </ng-container>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>
+
+<p-confirmDialog rejectButtonStyleClass="p-button-outlined" key="{{'confirmDialogKeyDeleteTable' + this.index}}" [style]="{width: '30vw'}">
+</p-confirmDialog>

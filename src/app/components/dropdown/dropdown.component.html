@@ -1,0 +1,55 @@
+<div #targetDiv class="cssComponentDiv" [style]="{
+'display': dropdown.labelPosition.code === enumPosition.LEFT.code ? 'flex' : 'grid',
+'padding': dropdown.padding.top + getPxStringForPadding(dropdown.padding.top) + ' ' +
+           dropdown.padding.right + getPxStringForPadding(dropdown.padding.right) + ' ' +
+           dropdown.padding.bottom + getPxStringForPadding(dropdown.padding.bottom) + ' ' +
+           dropdown.padding.left + getPxStringForPadding(dropdown.padding.left) + ' ',
+'align-items': 'center'
+}">
+  <label
+    [style]="{
+    'width': dropdown.labelElement.width,
+    'overflow': 'hidden !important',
+    'white-space': 'nowrap',
+    'text-overflow': 'ellipsis',
+    'display': 'inline-block',
+    'line-height': dropdown.labelElement.lineHeight ? dropdown.labelElement.lineHeight : 'unset',
+    'float': 'left',
+    'margin-left': dropdown.labelElement.marginLeft + 'px',
+    'margin-bottom': dropdown.labelElement.marginBottom + 'px',
+    'color': dropdown.labelElement.font.color,
+    'font-weight': dropdown.labelElement.font.weight,
+    'font-size': dropdown.labelElement.font.size + 'px',
+    'font-family': dropdown.labelElement.font.family,
+    'border-radius': dropdown.labelElement.border.radius + 'px',
+    'border-style': dropdown.labelElement.border.style.value,
+    'border-width': dropdown.labelElement.border.width + 'px',
+    'border-color': dropdown.labelElement.border.color
+  }"
+    for="{{dropdown.id}}">{{dropdown.labelElement.value}}</label>
+  <select [style]="{
+      'width': dropdown.inputElement.width,
+      'color': dropdown.inputElement.font.color,
+      'font-weight': dropdown.inputElement.font.weight,
+      'font-size': dropdown.inputElement.font.size + 'px',
+      'font-family': dropdown.inputElement.font.family,
+      'height': dropdown.inputElement.height ? dropdown.inputElement.height + 'px' : 'unset',
+      'border-radius': dropdown.inputElement.border.radius + 'px',
+      'border-style': dropdown.inputElement.border.style.value,
+      'border-width': dropdown.inputElement.border.width + 'px',
+      'border-color': dropdown.inputElement.border.color
+    }" type="text" id="{{dropdown.id}}"
+           name="{{dropdown.name}}">
+    <option disabled selected value> -- Select -- </option>
+    <ng-container *ngFor="let option of dropdown.options">
+      <option value="{{option.value}}" [attr.selected]="dropdown.selectedOption && option.value === dropdown.selectedOption.value ? 'selected' : null">{{option.text}}</option>
+    </ng-container>
+  </select>
+</div>
+
+<p-contextMenu [target]="targetDiv" [model]="menuItems"></p-contextMenu>
+
+<p-confirmDialog rejectButtonStyleClass="p-button-outlined" key="{{'confirmDialogKeyDelete' + this.index.row + this.index.column + this.tableIndex}}" [style]="{width: '30vw'}">
+</p-confirmDialog>
+
+

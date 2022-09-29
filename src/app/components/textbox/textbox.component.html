@@ -1,0 +1,54 @@
+<div #targetDiv class="cssComponentDiv" [style]="{
+'display': textbox.labelPosition.code === enumPosition.LEFT.code ? 'flex' : 'grid',
+'padding': textbox.padding.top + getPxStringForPadding(textbox.padding.top) + ' ' +
+           textbox.padding.right + getPxStringForPadding(textbox.padding.right) + ' ' +
+           textbox.padding.bottom + getPxStringForPadding(textbox.padding.bottom) + ' ' +
+           textbox.padding.left + getPxStringForPadding(textbox.padding.left) + ' ',
+'align-items': 'center'
+}">
+  <label
+    [style]="{
+    'width': textbox.labelElement.width,
+    'overflow': 'hidden !important',
+    'white-space': 'nowrap',
+    'text-overflow': 'ellipsis',
+    'display': 'inline-block',
+    'line-height': textbox.labelElement.lineHeight ? textbox.labelElement.lineHeight : 'unset',
+    'float': 'left',
+    'margin-left': textbox.labelElement.marginLeft + 'px',
+    'margin-bottom': textbox.labelElement.marginBottom + 'px',
+    'color': textbox.labelElement.font.color,
+    'font-weight': textbox.labelElement.font.weight,
+    'font-size': textbox.labelElement.font.size + 'px',
+    'font-family': textbox.labelElement.font.family,
+    'border-radius': textbox.labelElement.border.radius + 'px',
+    'border-style': textbox.labelElement.border.style.value,
+    'border-width': textbox.labelElement.border.width + 'px',
+    'border-color': textbox.labelElement.border.color
+  }"
+    for="{{textbox.inputElement.id}}">{{textbox.labelElement.value}}</label>
+  <input placeholder="{{textbox.placeHolder}}" [style]="{
+    'width': textbox.inputElement.width,
+    'line-height': textbox.inputElement.lineHeight + 'px',
+    'margin-left': textbox.inputElement.marginLeft + 'px',
+    'margin-bottom': textbox.inputElement.marginBottom + 'px',
+    'color': textbox.inputElement.font.color,
+    'font-weight': textbox.inputElement.font.weight,
+    'font-size': textbox.inputElement.font.size + 'px',
+    'font-family': textbox.inputElement.font.family,
+    'height': textbox.inputElement.height ? textbox.inputElement.height + 'px' : 'unset',
+    'border-radius': textbox.inputElement.border.radius + 'px',
+    'border-style': textbox.inputElement.border.style.value,
+    'border-width': textbox.inputElement.border.width + 'px',
+    'border-color': textbox.inputElement.border.color
+  }" type="text" id="{{textbox.inputElement.id}}"
+         name="{{textbox.inputElement.name}}"
+         value="{{textbox.inputElement.value}}">
+</div>
+
+<p-contextMenu [target]="targetDiv" [model]="menuItems"></p-contextMenu>
+
+<p-confirmDialog rejectButtonStyleClass="p-button-outlined" key="{{'confirmDialogKeyDelete' + this.index.row + this.index.column + this.tableIndex}}" [style]="{width: '30vw'}">
+</p-confirmDialog>
+
+

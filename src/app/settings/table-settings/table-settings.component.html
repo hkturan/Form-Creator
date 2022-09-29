@@ -1,0 +1,59 @@
+<div>
+  <!-- Id -->
+  <div class="cssDisplayFlex cssFieldRow">
+    <div class="cssLabel">
+      <label>Id</label>
+    </div>
+    <input class="p-ml-5 p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput" id="tableId"
+           type="text" pInputText [(ngModel)]="table.id" placeholder="Enter Table Id">
+  </div>
+  <!-- Id -->
+
+  <!-- Name -->
+  <div class="cssDisplayFlex cssFieldRow">
+    <div class="cssLabel">
+      <label>Name</label>
+    </div>
+    <input class="p-ml-5 p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput" id="tableName"
+           type="text" pInputText [(ngModel)]="table.name" placeholder="Enter Table Name">
+  </div>
+  <!-- Name -->
+
+  <!-- Row Count -->
+  <div class="cssDisplayFlex cssFieldRow">
+    <div class="cssLabel">
+      <label>Row Count</label>
+    </div>
+    <input class="p-ml-5 p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput" id="tableRowCount"
+           type="number" pInputText [(ngModel)]="table.rowCount">
+  </div>
+  <!-- Row Count -->
+
+  <!-- Column Count -->
+  <div class="cssDisplayFlex cssFieldRow">
+    <div class="cssLabel">
+      <label>Column Count</label>
+    </div>
+    <input class="p-ml-5 p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput" id="tableColumnCount"
+           type="number" pInputText [(ngModel)]="table.columnCount">
+  </div>
+  <!-- Column Count -->
+</div>
+
+<div style="text-align: center; margin-top: 15px; border-top: 1px solid #ebebeb; padding-top: 15px;">
+  <div class="field-checkbox">
+    <p-checkbox [(ngModel)]="useLastSettings" [binary]="true" inputId="binary"></p-checkbox>
+    <label class="p-ml-1" style="font-size: 13px; font-weight: 600;" for="binary">Use settings for next uses</label>
+  </div>
+</div>
+<div style="text-align: center; margin-top: 8px;">
+  <button pButton pRipple type="button" (click)="onClickConfirm()"
+          label="Confirm"
+          class="cssConfirmButton p-element p-ripple p-button-rounded p-button-primary p-button p-component">
+  </button>
+  <button pButton pRipple type="button" (click)="onClickCancel()"
+          label="Cancel"
+          class="cssConfirmButton p-element p-ripple p-button-outlined p-button-rounded p-button-primary p-button p-component p-ml-2">
+  </button>
+</div>
+

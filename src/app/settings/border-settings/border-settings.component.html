@@ -1,0 +1,43 @@
+<div class="p-mt-2">
+  <p-panel header="Border" [toggleable]="true" expandIcon="pi pi-chevron-down" collapseIcon="pi pi-chevron-up">
+    <div class="cssMain">
+      <!-- Width -->
+      <div class="cssDisplayFlex">
+        <div class="cssLabel">
+          <label>Size</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="number" pInputText [(ngModel)]="border.width">
+      </div>
+      <!-- Width -->
+
+      <!-- Radius -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Radius</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="number" pInputText [(ngModel)]="border.radius">
+      </div>
+      <!-- Radius -->
+
+      <!-- Style -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Style</label>
+        </div>
+        <p-dropdown [style]="{'width': 'calc(107.14px)'}" id="dropDownFixWidth" styleClass="deneme" [options]="listEnumBorderStyle" [(ngModel)]="border.style" optionLabel="text"></p-dropdown>
+      </div>
+      <!-- Style -->
+
+      <!-- Color -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Color</label>
+        </div>
+        <p-colorPicker appendTo="body" [(ngModel)]="border.color"></p-colorPicker>
+      </div>
+      <!-- Color -->
+    </div>
+  </p-panel>
+</div>

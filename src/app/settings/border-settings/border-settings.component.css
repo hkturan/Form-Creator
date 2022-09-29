@@ -1,0 +1,41 @@
+:host ::ng-deep .p-panel-header {
+  font-size: 13px;
+  height: 40px;
+  padding-right: 8px !important;
+}
+
+:host ::ng-deep .pi {
+  font-size: 15px !important;
+}
+
+:host ::ng-deep .p-panel-content {
+  padding: 15px;
+}
+
+:host ::ng-deep .p-dropdown {
+  height: 33px;
+  width: 100%;
+}
+
+:host ::ng-deep .p-dropdown-label {
+  font-size: 13px;
+  padding: 0.32rem 0.75rem;
+}
+
+:host ::ng-deep .p-dropdown-items {
+  font-size: 13px;
+}
+
+.cssInput {
+  width: calc(100% - 60px);
+  height: 33px;
+  font-size: 13px;
+}
+
+.cssLabel {
+  width: 60px;
+  line-height: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666666;
+}

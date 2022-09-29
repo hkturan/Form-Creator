@@ -1,0 +1,100 @@
+<div class="p-mt-2">
+  <p-panel [header]="header" [toggleable]="true" expandIcon="pi pi-chevron-down" collapseIcon="pi pi-chevron-up">
+    <div class="cssDisplayFlex">
+      <div class="cssWidth100Percent">
+        <!-- Id -->
+        <div class="cssDisplayFlex cssFieldRow">
+          <div class="cssLabel">
+            <label>Id</label>
+          </div>
+          <input class="p-inputtext p-component p-EnumBorderStyle ng-pristine ng-valid ng-touched cssInput" id="labelId"
+                 type="text" pInputText [(ngModel)]="element.id">
+        </div>
+        <!-- Id -->
+
+        <!-- Name -->
+        <div class="cssDisplayFlex cssFieldRow">
+          <div class="cssLabel">
+            <label>Name</label>
+          </div>
+          <input class="p-inputtext p-component p-EnumBorderStyle ng-pristine ng-valid ng-touched cssInput"
+                 id="labelName"
+                 type="text" pInputText [(ngModel)]="element.name">
+        </div>
+        <!-- Name -->
+
+        <!-- Width -->
+        <div class="cssDisplayFlex cssFieldRow">
+          <div class="cssLabel">
+            <label>Width</label>
+          </div>
+          <input class="p-inputtext p-component p-EnumBorderStyle ng-pristine ng-valid ng-touched cssInput"
+                 type="text" pInputText [(ngModel)]="element.width">
+        </div>
+        <!-- Width -->
+
+        <!-- Height -->
+        <div class="cssDisplayFlex cssFieldRow">
+          <div class="cssLabel">
+            <label>Height</label>
+          </div>
+          <input class="p-inputtext p-component p-EnumBorderStyle ng-pristine ng-valid ng-touched cssInput"
+                 type="text" pInputText [(ngModel)]="element.height">
+        </div>
+        <!-- Height -->
+      </div>
+      <div class="cssWidth100Percent p-ml-3">
+        <!-- Value -->
+        <div class="cssDisplayFlex cssFieldRow">
+          <div class="cssLabel">
+            <label>Value</label>
+          </div>
+          <input class="p-inputtext p-component p-EnumBorderStyle ng-pristine ng-valid ng-touched cssInput"
+                 id="labelValue"
+                 type="text" pInputText [(ngModel)]="element.value">
+        </div>
+        <!-- Value -->
+
+        <!-- Margin-Left -->
+        <div class="cssDisplayFlex cssFieldRow">
+          <div class="cssLabel">
+            <label>Margin Left</label>
+          </div>
+          <input class="p-inputtext p-component p-EnumBorderStyle ng-pristine ng-valid ng-touched cssInput"
+                 id="labelMarginLeft"
+                 type="number" pInputText [(ngModel)]="element.marginLeft">
+        </div>
+        <!-- Margin-Left -->
+
+        <!-- Margin-Bottom -->
+        <div class="cssDisplayFlex cssFieldRow">
+          <div class="cssLabel">
+            <label>Margin Bot</label>
+          </div>
+          <input class="p-inputtext p-component p-EnumBorderStyle ng-pristine ng-valid ng-touched cssInput"
+                 id="labelMarginBottom"
+                 type="number" pInputText [(ngModel)]="element.marginBottom">
+        </div>
+        <!-- Margin-Bottom -->
+
+        <!-- Line-Height -->
+        <div class="cssDisplayFlex cssFieldRow">
+          <div class="cssLabel">
+            <label>Line Height</label>
+          </div>
+          <input class="p-inputtext p-component p-EnumBorderStyle ng-pristine ng-valid ng-touched cssInput"
+                 id="labelLineHeight"
+                 type="number" pInputText [(ngModel)]="element.lineHeight">
+        </div>
+        <!-- Line-Height -->
+      </div>
+    </div>
+  </p-panel>
+  <div class="cssDisplayFlex">
+    <app-font-settings [font]="element.font"></app-font-settings>
+    <div style="width: 15px;">
+      <!-- SPACING -->
+    </div>
+    <app-border-settings [border]="element.border"></app-border-settings>
+  </div>
+</div>

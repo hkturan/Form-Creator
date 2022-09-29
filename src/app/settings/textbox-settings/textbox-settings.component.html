@@ -1,0 +1,86 @@
+<div style="overflow-y: scroll; max-height: 500px; padding: 10px;">
+  <div class="cssHeader">Element Settings</div>
+  <p-panel header="Element" [toggleable]="true" expandIcon="pi pi-chevron-down" collapseIcon="pi pi-chevron-up">
+    <div>
+      <!-- Id -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Id</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="text" pInputText [(ngModel)]="textbox.name" placeholder="Enter Element Id">
+      </div>
+      <!-- Id -->
+
+      <!-- Name -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Name</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="text" pInputText [(ngModel)]="textbox.id" placeholder="Enter Element Name">
+      </div>
+      <!-- Name -->
+
+      <!-- Place Holder -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Place Holder</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput"
+               type="text" pInputText [(ngModel)]="textbox.placeHolder">
+      </div>
+      <!-- Place Holder -->
+
+      <!-- Padding -->
+      <div class="cssDisplayFlex cssFieldRow">
+        <div class="cssLabel">
+          <label>Padding</label>
+        </div>
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput cssPaddingInput"
+               type="number" pInputText [(ngModel)]="textbox.padding.top" pTooltip="Top" tooltipPosition="top" placeholder="Top">
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput cssPaddingInput p-ml-2"
+               type="number" pInputText [(ngModel)]="textbox.padding.right" pTooltip="Right" tooltipPosition="top" placeholder="Top">
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput cssPaddingInput p-ml-2"
+               type="number" pInputText [(ngModel)]="textbox.padding.bottom" pTooltip="Bottom" tooltipPosition="top" placeholder="Top">
+        <input class="p-inputtext p-component p-element ng-pristine ng-valid ng-touched cssInput cssPaddingInput p-ml-2"
+               type="number" pInputText [(ngModel)]="textbox.padding.left" pTooltip="Left" tooltipPosition="top" placeholder="Top">
+      </div>
+      <!-- Padding -->
+    </div>
+    <div class="cssDisplayFlex p-mt-1">
+      <div class="cssLabel">
+        <label>Label Position</label>
+      </div>
+      <p-dropdown [options]="listEnumPosition" [(ngModel)]="textbox.labelPosition" optionLabel="text" optionDisabled="isAvailableForTextbox"></p-dropdown>
+    </div>
+  </p-panel>
+
+  <div class="cssDisplayFlex p-mt-3">
+    <div class="cssWidth100Percent">
+      <div class="cssHeader">Label Settings</div>
+      <app-element-settings [element]="textbox.labelElement"></app-element-settings>
+    </div>
+    <div style="width: 20px;">
+      <!--SPACING-->
+    </div>
+    <div class="cssWidth100Percent">
+      <div class="cssHeader">Input Settings</div>
+      <app-element-settings [element]="textbox.inputElement"></app-element-settings>
+    </div>
+  </div>
+</div>
+<div style="text-align: center; margin-top: 15px; border-top: 1px solid #ebebeb; padding-top: 15px;">
+  <div class="field-checkbox">
+    <p-checkbox [(ngModel)]="useLastSettings" [binary]="true" inputId="binary"></p-checkbox>
+    <label class="p-ml-1" style="font-size: 13px; font-weight: 600;" for="binary">Use settings for next uses</label>
+  </div>
+</div>
+<div style="text-align: center; margin-top: 8px;">
+  <button pButton pRipple type="button" (click)="onClickConfirm()"
+          label="Confirm" class="cssConfirmButton p-element p-ripple p-button-rounded p-button-primary p-button p-component">
+  </button>
+  <button pButton pRipple type="button" (click)="onClickCancel()"
+          label="Cancel" class="cssConfirmButton p-element p-ripple p-button-outlined p-button-rounded p-button-primary p-button p-component p-ml-2">
+  </button>
+</div>

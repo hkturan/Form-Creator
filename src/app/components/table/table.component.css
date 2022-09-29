@@ -1,0 +1,16 @@
+.divFormElement {
+  transition: 0.5s;
+  border-radius: 4px;
+}
+
+.divFormElement:hover  {
+  cursor: pointer;
+  background: #007bff8a;
+  border-radius: 5px;
+}
+
+.divTable {
+  border:3px solid #007bff;
+  padding-top: 15px;
+  margin-top: 15px;
+}

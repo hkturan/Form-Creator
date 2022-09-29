@@ -1,0 +1,35 @@
+<div #targetDiv class="cssComponentDiv" [style]="{
+  'line-height': checkbox.labelElement.lineHeight,
+  'display': 'flex',
+  'padding': checkbox.padding.top + getPxStringForPadding(checkbox.padding.top) + ' ' +
+           checkbox.padding.right + getPxStringForPadding(checkbox.padding.right) + ' ' +
+           checkbox.padding.bottom + getPxStringForPadding(checkbox.padding.bottom) + ' ' +
+           checkbox.padding.left + getPxStringForPadding(checkbox.padding.left) + ''
+  }">
+  <input type="checkbox" id="{{checkbox.id}}" name="{{checkbox.name}}" [style]="{'zoom': checkbox.zoom, 'accent-color': checkbox.backgroundColor}">
+  <div>
+    <label [style]="{
+    'margin-left': checkbox.labelElement.marginLeft + 'px',
+    'margin-bottom': checkbox.labelElement.marginBottom + 'px',
+    'overflow': 'hidden !important',
+    'white-space': 'nowrap',
+    'text-overflow': 'ellipsis',
+    'display': 'inline-block',
+    'line-height': checkbox.labelElement.lineHeight ? checkbox.labelElement.lineHeight : 'unset',
+    'float': 'left',
+    'color': checkbox.labelElement.font.color,
+    'font-weight': checkbox.labelElement.font.weight,
+    'font-size': checkbox.labelElement.font.size + 'px',
+    'font-family': checkbox.labelElement.font.family,
+    'border-radius': checkbox.labelElement.border.radius + 'px',
+    'border-style': checkbox.labelElement.border.style.value,
+    'border-width': checkbox.labelElement.border.width + 'px',
+    'border-color': checkbox.labelElement.border.color
+    }">{{checkbox.labelElement.value}}</label>
+  </div>
+</div>
+
+<p-contextMenu [target]="targetDiv" [model]="menuItems"></p-contextMenu>
+
+<p-confirmDialog rejectButtonStyleClass="p-button-outlined" key="{{'confirmDialogKeyDelete' + this.index.row + this.index.column + this.tableIndex}}" [style]="{width: '30vw'}">
+</p-confirmDialog>
