@@ -63,28 +63,16 @@ The project was developed to use angular 11.0.0 for front-end developers and aim
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/hkturan/Pokemon-Game-Bot.git
+   git clone https://github.com/hkturan/Form-Creator.git
    ```
-2. Install Python libraries
+2. Install Npm Packages (in Terminal)
    ```sh
-   pip install PyQt5
-   pip install opencv-python
-   pip install pytesseract
-   pip install Pillow
-   pip install pyautogui
-   pip install pywin32
+   npm install
    ```
-3. Download Tesseract-OCR, Install and Set Path in `json/settings.json` (Key : "path_of_tesseract")
-
-
-   * For Win32 - https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w32-setup-v5.2.0.20220712.exe
-   * For Win64 - https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.2.0.20220712.exe
-   
-4. Download Game (1600x900 must be downloaded)
-
-  
-  * Pokemon Planet - https://pokemon-planet.com/
-
+3. Start and Create Form (in Terminal)
+   ```sh
+   npm start
+   ```
 
 **[⬆ back to top](#readme-top)**
 
